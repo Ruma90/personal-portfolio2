@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afroja Akter Ruma | Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#faf6f0",
+            stone: "#8b877e",
+            blush: "#efe0d4",
+            charcoal: "#2a2622",
+            clay: "#cf9873",
+            sage: "#e4e7e0",
+            line: "#e2dbd0"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+            serif: ["Cormorant Garamond", "serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Navbar link click → smooth scroll to that section (offset for sticky header) */
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 76px; }
+
+    /* Active nav link */
+    .nav-link.active { color: #cf9873; }
+
+    /* Dark mode overrides */
+    body.dark-mode { background-color: #201d1a; color: #f3ede4; }
+    body.dark-mode .bg-cream            { background-color: #201d1a !important; }
+    body.dark-mode .bg-cream\/90        { background-color: rgba(32,29,26,0.9) !important; }
+    body.dark-mode .bg-blush            { background-color: #2c2723 !important; }
+    body.dark-mode .bg-sage             { background-color: #35302a !important; }
+    body.dark-mode .bg-white\/60,
+    body.dark-mode .bg-white\/70        { background-color: rgba(255,255,255,0.06) !important; }
+    body.dark-mode .text-charcoal       { color: #f3ede4 !important; }
+    body.dark-mode .text-charcoal\/75,
+    body.dark-mode .text-charcoal\/70,
+    body.dark-mode .text-charcoal\/65   { color: rgba(243,237,228,0.7) !important; }
+    body.dark-mode .border-line         { border-color: #453f37 !important; }
+    body.dark-mode #mobileMenu          { background-color: #201d1a !important; }
+  </style>
+</head>
+
+<body class="bg-cream text-charcoal font-sans leading-relaxed">
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-line">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#home" class="font-serif text-2xl tracking-widest">Ruma.</a>
+
+      <!-- Desktop links -->
+      <div class="hidden lg:flex gap-7 text-sm items-center">
+        <a href="#home" class="nav-link hover:text-clay transition">Home</a>
+        <a href="#about" class="nav-link hover:text-clay transition">About</a>
+        <a href="#skills" class="nav-link hover:text-clay transition">Skills</a>
+        <a href="#projects" class="nav-link hover:text-clay transition">Projects</a>
+        <a href="#achievements" class="nav-link hover:text-clay transition">Achievements</a>
+        <a href="#education" class="nav-link hover:text-clay transition">Education</a>
+        <a href="#contact" class="nav-link hover:text-clay transition">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" aria-label="Toggle dark mode"
+          class="border border-line rounded-full w-9 h-9 flex items-center justify-center hover:bg-clay hover:text-cream transition">🌙</button>
+        <a href="#contact"
+          class="hidden sm:inline-block bg-clay text-charcoal rounded-full px-5 py-2 text-sm font-semibold hover:bg-orange-200 transition">
+          Let's Talk
+        </a>
+        <!-- Mobile menu button -->
+        <button id="menuBtn" aria-label="Open menu"
+          class="lg:hidden border border-line rounded-full w-9 h-9 flex items-center justify-center">☰</button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-cream border-t border-line px-6 py-4">
+      <div class="flex flex-col gap-4 text-sm">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#contact" class="bg-clay text-charcoal rounded-full px-5 py-2 text-center font-semibold">Let's Talk</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HOME / HERO ================= -->
+  <section id="home" class="bg-stone text-cream px-6 py-16 sm:py-24">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+      <div>
+        <p class="text-clay text-sm tracking-widest mb-3">HELLO, I'M</p>
+        <h1 class="font-serif text-5xl sm:text-7xl leading-tight mb-3">Afroja Akter Ruma</h1>
+        <h2 class="font-serif text-2xl sm:text-3xl text-clay mb-6">Aspiring Web Developer</h2>
+
+        <p class="text-cream/80 max-w-md mb-8">
+          An aspiring web developer with basic knowledge of HTML, CSS, and JavaScript. I enjoy creating simple, user-friendly websites and continuously improving my skills.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#projects"
+             class="bg-clay text-charcoal rounded-full px-7 py-3 text-sm font-semibold hover:bg-orange-200 transition">
+            View My Projects
+          </a>
+          <a href="https://ruma90.github.io/personal-resume1/" target="_blank" rel="noopener"
+             class="border border-cream/60 rounded-full px-7 py-3 text-sm font-semibold hover:bg-clay hover:text-charcoal hover:border-clay transition">
+            Resume
+          </a>
+          <a href="#contact"
+             class="border border-cream/60 rounded-full px-7 py-3 text-sm font-semibold hover:bg-clay hover:text-charcoal hover:border-clay transition">
+            Contact Me
+          </a>
+        </div>
+
+        <p id="greeting" class="mt-6 text-xs text-cream/60"></p>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-2xl">
+        <img src="images/ruma.jpeg" alt="Afroja Akter Ruma"
+             class="w-full h-[340px] sm:h-[460px] object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="py-20 sm:py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-clay text-sm tracking-widest mb-3">ABOUT ME</p>
+      <h2 class="font-serif text-4xl sm:text-5xl text-center mb-12">Who I Am</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="text-charcoal/75 flex flex-col gap-4 max-w-lg">
+          <p>
+            I'm Afroja Akter Ruma, an aspiring web developer currently developing my skills in frontend development and working on academic and personal projects.
+          </p>
+          <p>
+            I believe in learning by doing. Every project gives me an opportunity to improve my coding, problem-solving, design, and development skills.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5">
+          <div class="border border-line bg-white/60 rounded-2xl p-8 text-center">
+            <p class="font-serif text-4xl text-clay">CSE</p>
+            <p class="text-sm text-charcoal/70">Student</p>
+          </div>
+          <div class="border border-line bg-white/60 rounded-2xl p-8 text-center">
+            <p class="font-serif text-4xl text-clay">Web</p>
+            <p class="text-sm text-charcoal/70">Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="bg-blush py-20 sm:py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-center text-clay text-sm tracking-widest mb-3">WHAT I KNOW</p>
+      <h2 class="font-serif text-4xl sm:text-5xl text-center mb-12">My Skills</h2>
+
+      <div id="skillBars" class="flex flex-col gap-6">
+        <div>
+          <div class="flex justify-between text-sm mb-2"><span>HTML &amp; CSS</span><span>95%</span></div>
+          <div class="h-1.5 bg-sage rounded-full overflow-hidden">
+            <div class="bg-clay h-full w-0 rounded-full transition-all duration-1000 ease-out" data-target="95"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2"><span>Responsive Design</span><span>90%</span></div>
+          <div class="h-1.5 bg-sage rounded-full overflow-hidden">
+            <div class="bg-clay h-full w-0 rounded-full transition-all duration-1000 ease-out" data-target="90"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2"><span>JavaScript</span><span>75%</span></div>
+          <div class="h-1.5 bg-sage rounded-full overflow-hidden">
+            <div class="bg-clay h-full w-0 rounded-full transition-all duration-1000 ease-out" data-target="75"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2"><span>React</span><span>60%</span></div>
+          <div class="h-1.5 bg-sage rounded-full overflow-hidden">
+            <div class="bg-clay h-full w-0 rounded-full transition-all duration-1000 ease-out" data-target="60"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between text-sm mb-2"><span>Python</span><span>80%</span></div>
+          <div class="h-1.5 bg-sage rounded-full overflow-hidden">
+            <div class="bg-clay h-full w-0 rounded-full transition-all duration-1000 ease-out" data-target="80"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="py-20 sm:py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-clay text-sm tracking-widest mb-3">MY WORK</p>
+      <h2 class="font-serif text-4xl sm:text-5xl text-center mb-4">Featured Projects</h2>
+      <p class="text-center text-charcoal/65 max-w-lg mx-auto mb-8">
+        Some projects I have worked on while learning and practicing development.
+      </p>
+
+      <div class="max-w-sm mx-auto mb-6">
+        <input id="projectSearch" type="text" placeholder="Search projects…"
+          class="w-full rounded-full px-5 py-3 text-sm border border-line bg-transparent outline-none focus:border-clay">
+      </div>
+
+      <div id="filterBar" class="flex flex-wrap justify-center gap-3 mb-10 text-sm"></div>
+      <div id="projectGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-5"></div>
+    </div>
+  </section>
+
+  <!-- Project modal -->
+  <div id="projectModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-charcoal/70 px-6">
+    <div class="bg-cream text-charcoal rounded-2xl max-w-lg w-full p-8 relative">
+      <button id="modalClose" aria-label="Close"
+        class="absolute top-4 right-4 w-8 h-8 rounded-full border border-line flex items-center justify-center hover:bg-clay hover:text-cream transition">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ================= ACHIEVEMENTS ================= -->
+  <section id="achievements" class="bg-blush py-20 sm:py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-clay text-sm tracking-widest mb-3">ACHIEVEMENTS</p>
+      <h2 class="font-serif text-4xl sm:text-5xl text-center mb-4">Milestones</h2>
+      <p class="text-center text-charcoal/65 max-w-lg mx-auto mb-12">
+        Things I have learned and built along the way.
+      </p>
+
+      <div id="achievementsGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <p class="col-span-full text-center text-charcoal/50 text-sm">Loading achievements…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section id="education" class="py-20 sm:py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-center text-clay text-sm tracking-widest mb-3">EDUCATION</p>
+      <h2 class="font-serif text-4xl sm:text-5xl text-center mb-12">My Academic Journey</h2>
+
+      <!-- Timeline -->
+      <div class="relative max-w-3xl mx-auto">
+        <!-- vertical line -->
+        <div class="absolute left-[9px] top-3 bottom-3 w-0.5 bg-clay/30"></div>
+
+        
+        <div class="relative pl-14 pb-14">
+          <span class="absolute left-0 top-1 w-5 h-5 rounded-full bg-clay ring-4 ring-clay/30 shadow-[0_0_14px_#cf9873]"></span>
+          <p class="text-clay text-base mb-1">Bachelor of Science</p>
+          <h3 class="font-serif text-3xl sm:text-4xl text-clay mb-2">Computer Science &amp; Engineering</h3>
+          <p class="mb-3">International Islamic University Chittagong</p>
+          <p class="text-charcoal/70 max-w-xl">
+            Currently studying Computer Science and Engineering with an interest in software development and web technologies.
+          </p>
+        </div>
+
+        <div class="relative pl-14">
+          <span class="absolute left-[5px] top-2 w-[11px] h-[11px] rounded-full bg-stone"></span>
+          <p class="text-clay text-base mb-1">Continuous Learning</p>
+          <h3 class="font-serif text-3xl sm:text-4xl mb-2">Web Development</h3>
+          <p class="text-charcoal/70 max-w-xl">
+            Currently practicing HTML, CSS and JavaScript, and gradually expanding my knowledge of modern web development.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="bg-stone text-cream py-20 sm:py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-clay text-sm tracking-widest mb-3">CONTACT</p>
+      <h2 class="font-serif text-4xl sm:text-5xl text-center mb-4">Let's Connect</h2>
+      <p class="text-center text-cream/75 max-w-lg mx-auto mb-12">
+        Have a project, collaboration idea, or just want to say hello? Feel free to reach out.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+
+        <!-- Info -->
+        <div class="flex flex-col gap-6 text-sm">
+          <div>
+            <p class="text-clay mb-1">Email</p>
+            <a href="mailto:ruma240868@gmail.com" class="hover:text-clay">ruma240868@gmail.com</a>
+          </div>
+          <div>
+            <p class="text-clay mb-1">Phone</p>
+            <a href="tel:+8801616257497" class="hover:text-clay">+880 1616257497</a>
+          </div>
+          <div>
+            <p class="text-clay mb-1">Social</p>
+            <a href="https://github.com/Ruma90" target="_blank" rel="noopener" class="hover:text-clay">GitHub</a>
+            <span class="mx-1">•</span>
+            <a href="https://www.linkedin.com/in/afroja-ruma-33563132b/" target="_blank" rel="noopener" class="hover:text-clay">LinkedIn</a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <form id="quickForm" class="flex flex-col gap-3">
+          <input id="qName" type="text" placeholder="Name"
+                 class="rounded-full px-5 py-3 text-sm text-charcoal bg-cream/95 outline-none">
+          <input id="qEmail" type="email" placeholder="Email"
+                 class="rounded-full px-5 py-3 text-sm text-charcoal bg-cream/95 outline-none">
+          <textarea id="qMessage" placeholder="Message" rows="4"
+                 class="rounded-2xl px-5 py-3 text-sm text-charcoal bg-cream/95 outline-none"></textarea>
+          <button type="submit"
+                  class="bg-clay text-charcoal rounded-full px-7 py-3 text-sm font-semibold hover:bg-orange-200 transition">
+            Send Message
+          </button>
+          <p id="formStatus" class="text-xs text-center min-h-[1rem]"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-charcoal text-center py-6 px-6">
+    <p class="text-xs text-cream/50">© 2026 Afroja Akter Ruma. All rights reserved.</p>
+    <p class="text-xs text-cream/40 mt-1">Built with HTML &amp; Tailwind CSS</p>
+  </footer>
+
+  <script>
+    /* ---------- Greeting ---------- */
+    function getGreeting() {
+      const hour = new Date().getHours();
+      if (hour < 12) return "Good morning! Thanks for stopping by.";
+      if (hour < 18) return "Good afternoon! Thanks for stopping by.";
+      return "Good evening! Thanks for stopping by.";
+    }
+    document.getElementById("greeting").textContent = getGreeting();
+
+    /* ---------- Theme toggle ---------- */
+    const themeBtn = document.getElementById("themeToggle");
+
+    function applyTheme(theme) {
+      const isDark = theme === "dark";
+      document.body.classList.toggle("dark-mode", isDark);
+      themeBtn.textContent = isDark ? "☀️" : "🌙";
+    }
+    applyTheme(localStorage.getItem("portfolio-theme") || "light");
+
+    themeBtn.addEventListener("click", () => {
+      const next = document.body.classList.contains("dark-mode") ? "light" : "dark";
+      applyTheme(next);
+      localStorage.setItem("portfolio-theme", next);
+    });
+
+    /* ---------- Mobile menu ---------- */
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      menuBtn.textContent = mobileMenu.classList.contains("hidden") ? "☰" : "✕";
+    });
+    // Close the menu after tapping a link
+    mobileMenu.querySelectorAll("a").forEach(link =>
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuBtn.textContent = "☰";
+      })
+    );
+
+    /* ---------- Highlight the nav link of the section in view ---------- */
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function updateActiveLink() {
+      const scrollPos = window.scrollY + 120;
+      let currentId = "home";
+      sections.forEach(sec => {
+        if (scrollPos >= sec.offsetTop) currentId = sec.id;
+      });
+      navLinks.forEach(link =>
+        link.classList.toggle("active", link.getAttribute("href") === "#" + currentId)
+      );
+    }
+    window.addEventListener("scroll", updateActiveLink);
+    updateActiveLink();
+
+    /* ---------- Projects ---------- */
+    const projects = [
+      {
+        id: 1,
+        title: "Smart Attendance System",
+        tags: ["Python", "OpenCV"],
+        desc: "Face-recognition based attendance app that detects and matches student faces against a stored image database (CSV).",
+        github: "https://github.com/Ruma90/Face_recognition_attendance_system_project.git",
+        demo: "https://ruma90.github.io/Face_recognition_attendance_management_system/",
+        repo: "Face_recognition_attendance_system_project"
+      },
+      {
+        id: 2,
+        title: "Hotel Miranda",
+        tags: ["HTML", "CSS", "JavaScript"],
+        desc: "Single-page demo hotel website with room listings, a booking date-picker, amenities, a food menu, and a blog section.",
+        github: "https://github.com/Ruma90/Hotel-management-system.git",
+        demo: "https://ruma90.github.io/Hotel-management-system/",
+        repo: "Hotel-management-system"
+      },
+      {
+        id: 3,
+        title: "Bank Portfolio",
+        tags: ["HTML", "CSS", "JavaScript"],
+        desc: "A simple banking web app where users can deposit and withdraw money, with the balance updating instantly using JavaScript.",
+        github: "https://github.com/Ruma90/bank-portfolio.git",
+        demo: "https://ruma90.github.io/bank-portfolio/bank.html",
+        repo: "bank-portfolio"
+      },
+      {
+        id: 4,
+        title: "Personal Portfolio",
+        tags: ["HTML", "CSS", "JavaScript"],
+        desc: "A responsive personal portfolio with dark mode, project search and filters, and a contact form with validation, built with HTML, Tailwind CSS and JavaScript.",
+        github: "#",
+        demo: "#",
+        repo: null
+      }
+    ];
+
+    const projectCard = ({ id, title, tags, desc, github, demo }) => `
+      <div class="project-card bg-sage rounded-2xl p-7 hover:-translate-y-1 hover:shadow-xl transition cursor-pointer" data-id="${id}">
+        <p class="font-serif text-2xl text-clay mb-2">${tags.join(" • ")}</p>
+        <h3 class="font-serif text-2xl mb-2">${title}</h3>
+        <p class="text-sm text-charcoal/70 mb-2">${desc}</p>
+        <p class="text-xs text-charcoal/50 mb-3" data-stats="${id}">GitHub stats loading…</p>
+        <div class="flex gap-5 text-sm font-semibold">
+          <a href="${github}" onclick="event.stopPropagation()" class="hover:text-clay">GitHub</a>
+          <a href="${demo}" onclick="event.stopPropagation()" class="text-clay">View Project →</a>
+        </div>
+      </div>`;
+
+    const projectGrid = document.getElementById("projectGrid");
+    const filterBar = document.getElementById("filterBar");
+
+    const allTags = ["All", ...projects.reduce((tags, p) => {
+      p.tags.forEach(t => { if (!tags.includes(t)) tags.push(t); });
+      return tags;
+    }, [])];
+
+    filterBar.innerHTML = allTags.map(tag => `
+      <button data-tag="${tag}"
+        class="filter-btn border border-line rounded-full px-4 py-2 hover:bg-clay hover:text-cream transition">
+        ${tag}
+      </button>`).join("");
+
+    function renderProjects(list) {
+      if (list.length === 0) {
+        projectGrid.innerHTML = `<p class="col-span-full text-center text-charcoal/50 text-sm">No projects match your search.</p>`;
+        return;
+      }
+      projectGrid.innerHTML = list.map(projectCard).join("");
+      loadGithubStats(list);
+    }
+    renderProjects(projects);
+
+    let activeTag = "All";
+    const searchInput = document.getElementById("projectSearch");
+
+    function applyFilters() {
+      const term = searchInput.value.trim().toLowerCase();
+      const byTag = activeTag === "All" ? projects : projects.filter(p => p.tags.includes(activeTag));
+      const byTerm = byTag.filter(p =>
+        p.title.toLowerCase().includes(term) || p.desc.toLowerCase().includes(term)
+      );
+      renderProjects(byTerm);
+    }
+
+    filterBar.addEventListener("click", (e) => {
+      const btn = e.target.closest(".filter-btn");
+      if (!btn) return;
+      activeTag = btn.dataset.tag;
+      applyFilters();
+    });
+    searchInput.addEventListener("input", applyFilters);
+
+    /* ---------- Project modal ---------- */
+    const modal = document.getElementById("projectModal");
+    const modalContent = document.getElementById("modalContent");
+
+    projectGrid.addEventListener("click", (e) => {
+      const card = e.target.closest(".project-card");
+      if (!card) return;
+      const project = projects.find(p => p.id === Number(card.dataset.id));
+
+      modalContent.innerHTML = `
+        <p class="font-serif text-xl text-clay mb-2">${project.tags.join(" • ")}</p>
+        <h3 class="font-serif text-3xl mb-4">${project.title}</h3>
+        <p class="text-sm text-charcoal/75 mb-6">${project.desc}</p>
+        <div class="flex gap-5 text-sm font-semibold">
+          <a href="${project.github}" class="hover:text-clay">GitHub</a>
+          <a href="${project.demo}" class="text-clay">View Project →</a>
+        </div>`;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    function closeModal() {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+    document.getElementById("modalClose").addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+    /* ---------- GitHub stats ---------- */
+    async function loadGithubStats(list) {
+      for (const project of list) {
+        if (!project.repo) {
+          const none = document.querySelector(`[data-stats="${project.id}"]`);
+          if (none) none.remove();
+          continue;
+        }
+        const el = document.querySelector(`[data-stats="${project.id}"]`);
+        if (!el) continue;
+        try {
+          const res = await fetch(`https://api.github.com/repos/Ruma90/${project.repo}`);
+          if (!res.ok) throw new Error("GitHub request failed");
+          const { stargazers_count, updated_at } = await res.json();
+          el.textContent = `⭐ ${stargazers_count} • updated ${new Date(updated_at).toLocaleDateString()}`;
+        } catch (err) {
+          el.textContent = "GitHub stats unavailable";
+        }
+      }
+    }
+
+    /* ---------- Skill bars animation ---------- */
+    const bars = document.querySelectorAll("#skillBars [data-target]");
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.target + "%";
+          observer.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.4 });
+    bars.forEach(bar => observer.observe(bar));
+
+    /* ---------- Achievements (Promise + async/await) ---------- */
+    const achievements = [
+      { title: "Consistent Learner", text: "Steadily working through HTML, CSS and JavaScript fundamentals project by project." },
+      { title: "Problem Solver", text: "Comfortable breaking a feature down into small functions and building it up step by step." },
+      { title: "Builder", text: "Shipped multiple front-end projects from Figma-style ideas to working, deployed pages." }
+    ];
+
+    const fetchAchievements = () =>
+      new Promise((resolve) => setTimeout(() => resolve(achievements), 600));
+
+    async function loadAchievements() {
+      const grid = document.getElementById("achievementsGrid");
+      try {
+        const data = await fetchAchievements();
+        grid.innerHTML = data.map(({ title, text }) => `
+          <div class="border border-line bg-white/60 rounded-2xl p-8 hover:shadow-lg transition">
+            <p class="text-clay text-sm mb-2">Achievement</p>
+            <h3 class="font-serif text-2xl mb-3">${title}</h3>
+            <p class="text-sm text-charcoal/70">${text}</p>
+          </div>`).join("");
+      } catch (err) {
+        grid.innerHTML = `<p class="col-span-full text-center text-charcoal/50 text-sm">Couldn't load achievements.</p>`;
+      }
+    }
+    loadAchievements();
+
+    /* ---------- Contact form validation ---------- */
+    const quickForm = document.getElementById("quickForm");
+    const formStatus = document.getElementById("formStatus");
+
+    const findEmptyFields = (...fields) => fields.filter(({ value }) => value.trim() === "");
+
+    quickForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = document.getElementById("qName");
+  const email = document.getElementById("qEmail");
+  const message = document.getElementById("qMessage");
+
+  if (findEmptyFields(name, email, message).length > 0) {
+    formStatus.textContent = "Please fill in every field before sending.";
+    formStatus.className = "text-xs text-center min-h-[1rem] text-red-300";
+    return;
+  }
+  if (!email.value.includes("@")) {
+    formStatus.textContent = "That doesn't look like a valid email.";
+    formStatus.className = "text-xs text-center min-h-[1rem] text-red-300";
+    return;
+  }
+
+  formStatus.textContent = "Sending...";
+  formStatus.className = "text-xs text-center min-h-[1rem] text-cream";
+
+  try {
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: "68cae551-7c77-4b0d-86dd-38ba5052dd14",
+        subject: "New message from your portfolio",
+        name: name.value,
+        email: email.value,
+        message: message.value
+      })
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.message);
+
+    formStatus.textContent = `Thanks, ${name.value}! Your message has been sent.`;
+    formStatus.className = "text-xs text-center min-h-[1rem] text-clay";
+    quickForm.reset();
+  } catch (err) {
+    formStatus.textContent = "Couldn't send the message. Please try again.";
+    formStatus.className = "text-xs text-center min-h-[1rem] text-red-300";
+  }
+});
+  </script>
+</body>
+</html>
